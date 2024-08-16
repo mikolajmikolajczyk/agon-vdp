@@ -46,7 +46,7 @@ inline fabgl::Mouse* getMouse() {
 // Keyboard and mouse setup
 //
 void setupKeyboardAndMouse() {
-	fabgl::PS2Controller::begin();
+	fabgl::PS2Controller::begin(fabgl::PS2Preset::KeyboardPort0, fabgl::KbdMode::CreateVirtualKeysQueue);
 	auto kb = getKeyboard();
 	kb->setLayout(&fabgl::UKLayout);
 	kb->setCodePage(fabgl::CodePages::get(1252));
